@@ -12,8 +12,9 @@
 flag.DYC = 0; flag.current = 1;
 
 % 1. Active front steering
-Steer.Kp_pos =  0.0176;                    % P gain of the lateral position control via front steering
-Steer.Kp_yaw =  0.2355;                    % P gain of the yaw angle control control via front steering
+Steer.Kp_pos =  0.6842;                    % P gain of the lateral position control via front steering
+Steer.Kp_yaw =  2.9632;                    % P gain of the yaw angle control control via front steering
+Steer.Kd     =  0.1873;                    % yaw-rate damping gain of the steering command
 
 % 2. Yaw moment control (not used, flag.DYC = 0)
 DYC.Kp_pos   =  4000;
@@ -23,12 +24,12 @@ DYC.Taud_pos =  0.005;
 DYC.Kp_yaw   =  5000;
 
 % 3. Torque distribution
-tdis_FR      =  0.3306;                    % torque distribution gain (front right)
-tdis_FL      =  0.3306;                    % torque distribution gain (front left)
-tdis_RR      =  0.1694;                    % torque distribution gain (rear right)
+tdis_FR      =  0.3455;                    % torque distribution gain (front right)
+tdis_FL      =  0.3455;                    % torque distribution gain (front left)
+tdis_RR      =  0.1545;                    % torque distribution gain (rear right)
 tdis_RL      =  1 - (tdis_FR + tdis_FL + tdis_RR);  % torque distribution gain (rear left)
 
 % 4. Slip limiter
-Slip.th      =  0.0471;                    % slip ratio threshold
-Slip.k       =  45.6;                      % gate gain
-Slip.vmin    =  1.0;                       % minimum speed in the slip ratio denominator [m/s]
+Slip.th      =  0.0411;                    % slip ratio threshold
+Slip.k       =  57.5;                      % gate gain
+Slip.vmin    =  1.84;                      % minimum speed in the slip ratio denominator [m/s]

@@ -7,7 +7,7 @@ for ln in open('/tmp/claude-0/work/ws.txt'):
     k, v = ln.split('=')
     WS[k.strip()] = float(v)
 PARAM_USED = set()
-WS.update({'Slip.th': 0.05, 'Slip.k': 10.0, 'Slip.vmin': 1.0})
+WS.update({'Slip.th': 0.05, 'Slip.k': 10.0, 'Slip.vmin': 1.0, 'Steer.Kd': 0.0})
 
 SKIP = {'Scope', 'Display', 'Terminator', 'Record'}
 
